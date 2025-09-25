@@ -1,0 +1,89 @@
+/* --- FORMULÁRIOS  --- */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.formulario:hover {
+  transform: translateY(-3px);
+}
+
+/* Campos de input com estilo moderno */
+.formulario label {
+  font-weight: 500;
+  color: var(--abacate-verde-escuro);
+  font-size: 0.95rem;
+  margin-left: 5px;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 14px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--abacate-creme);
+  transition: all 0.3s ease;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  outline: none;
+  border-color: var(--abacate-verde-medio);
+  background: #fff;
+  box-shadow: 0 0 8px rgba(88,129,87,0.3);
+}
+
+/* Botão estilizado */
+.formulario button {
+  align-self: flex-start;
+  background: linear-gradient(135deg, var(--abacate-verde-medio), var(--abacate-verde-escuro));
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formulario button:hover {
+  background: linear-gradient(135deg, var(--abacate-verde-escuro), var(--abacate-verde-medio));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Newsletter título */
+.newsletter-title {
+  text-align: center;
+  margin: 2rem 0 1rem;
+  font-size: 1.4rem;
+  color: var(--abacate-verde-escuro);
+}
+
+/* Mensagem de resposta */
+.response-message {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--abacate-verde-escuro);
+  padding: 10px;
+  border-radius: 6px;
+  background: rgba(163, 177, 138, 0.2);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
