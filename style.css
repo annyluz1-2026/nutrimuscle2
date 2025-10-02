@@ -1,0 +1,663 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5dc;
+    color: #4a4a4a;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #8fbc8f, #9acd32);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #556b2f;
+    position: relative;
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo do Abacate */
+.avocado-logo {
+    position: relative;
+    width: 60px;
+    height: 80px;
+    margin-right: 15px;
+}
+
+.avocado-logo.small {
+    width: 40px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.avocado-body {
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(135deg, #9acd32, #7cfc00);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    border: 2px solid #556b2f;
+    position: relative;
+}
+
+.avocado-pit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background: #8b4513;
+    border-radius: 50%;
+    border: 2px solid #654321;
+}
+
+.avocado-logo.small .avocado-pit {
+    width: 20px;
+    height: 20px;
+}
+
+.avocado-face {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 40%;
+}
+
+.eye {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #000;
+    border-radius: 50%;
+    top: 20%;
+}
+
+.avocado-logo.small .eye {
+    width: 6px;
+    height: 6px;
+}
+
+.left-eye {
+    left: 30%;
+}
+
+.right-eye {
+    right: 30%;
+}
+
+.mouth {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 6px;
+    background: #000;
+    border-radius: 0 0 12px 12px;
+}
+
+.avocado-logo.small .mouth {
+    width: 8px;
+    height: 4px;
+}
+
+.avocado-leaf {
+    position: absolute;
+    top: -5px;
+    right: 20%;
+    width: 15px;
+    height: 20px;
+    background: #228b22;
+    border-radius: 0 100% 0 100%;
+    transform: rotate(45deg);
+    border: 1px solid #006400;
+}
+
+.avocado-logo.small .avocado-leaf {
+    width: 10px;
+    height: 15px;
+}
+
+.site-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #556b2f;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+}
+
+/* Menu Toggle */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    background: #556b2f;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: #6b8e23;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Main Content */
+.main-content {
+    min-height: calc(100vh - 140px);
+    position: relative;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background Pattern */
+.background-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23c8d6a0' fill-opacity='0.3'%3E%3Cpath d='M20 20c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10zm40 0c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10zm-20 40c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10zm40 0c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10z'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* Sections */
+.section {
+    display: none;
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    z-index: 10;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Cards */
+.card {
+    background: rgba(245, 245, 220, 0.95);
+    border: 3px solid #556b2f;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #556b2f;
+    padding-bottom: 15px;
+}
+
+.card-header h2 {
+    font-size: 1.8rem;
+    color: #556b2f;
+    font-weight: bold;
+}
+
+.menu-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.menu-dots span {
+    width: 6px;
+    height: 6px;
+    background: #556b2f;
+    border-radius: 50%;
+}
+
+/* Login Form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #556b2f;
+    font-size: 1.1rem;
+}
+
+.form-group input {
+    padding: 12px 15px;
+    border: 2px solid #9acd32;
+    border-radius: 25px;
+    font-size: 1rem;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #556b2f;
+    box-shadow: 0 0 10px rgba(154, 205, 50, 0.5);
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.forgot-password {
+    text-align: center;
+}
+
+.forgot-password a {
+    color: #556b2f;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: #6b8e23;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #9acd32, #7cfc00);
+    color: #556b2f;
+    border: 2px solid #556b2f;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: center;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #7cfc00, #9acd32);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Form Lines */
+.form-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.form-line {
+    height: 2px;
+    background: #556b2f;
+    border-radius: 1px;
+    width: 100%;
+}
+
+/* Users Grid */
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #a9a9a9, #d3d3d3);
+    border-radius: 50%;
+    border: 3px solid #556b2f;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.user-avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.user-avatar::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.user-avatar::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 25px;
+    background: #fff;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Contact Section */
+.contact-landscape {
+    height: 200px;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.sky {
+    height: 60%;
+    background: linear-gradient(to bottom, #87ceeb, #b0e0e6);
+    position: relative;
+}
+
+.cloud {
+    position: absolute;
+    background: #fff;
+    border-radius: 50px;
+    opacity: 0.8;
+}
+
+.cloud:nth-child(1) {
+    width: 60px;
+    height: 20px;
+    top: 20%;
+    left: 10%;
+}
+
+.cloud:nth-child(2) {
+    width: 80px;
+    height: 25px;
+    top: 30%;
+    left: 30%;
+}
+
+.cloud:nth-child(3) {
+    width: 70px;
+    height: 22px;
+    top: 15%;
+    left: 60%;
+}
+
+.cloud:nth-child(4) {
+    width: 90px;
+    height: 28px;
+    top: 35%;
+    left: 75%;
+}
+
+.cloud:nth-child(5) {
+    width: 50px;
+    height: 18px;
+    top: 25%;
+    left: 85%;
+}
+
+.mountains {
+    height: 40%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.mountain {
+    background: linear-gradient(to top, #6b8e23, #9acd32);
+    position: relative;
+}
+
+.mountain:nth-child(1) {
+    width: 25%;
+    height: 80%;
+    clip-path: polygon(0% 100%, 50% 20%, 100% 100%);
+}
+
+.mountain:nth-child(2) {
+    width: 25%;
+    height: 60%;
+    clip-path: polygon(0% 100%, 50% 40%, 100% 100%);
+}
+
+.mountain:nth-child(3) {
+    width: 25%;
+    height: 90%;
+    clip-path: polygon(0% 100%, 50% 10%, 100% 100%);
+}
+
+.mountain:nth-child(4) {
+    width: 25%;
+    height: 70%;
+    clip-path: polygon(0% 100%, 50% 30%, 100% 100%);
+}
+
+.contact-circles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.contact-circle {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #6b8e23, #9acd32);
+    border-radius: 50%;
+    border: 3px solid #556b2f;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Recipe Section */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.recipe-card {
+    width: 100%;
+    height: 150px;
+    background: rgba(245, 245, 220, 0.9);
+    border: 2px solid #556b2f;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.recipe-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recipe-line {
+    height: 2px;
+    background: #556b2f;
+    border-radius: 1px;
+    width: 100%;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #8fbc8f, #9acd32);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-top: 3px solid #556b2f;
+}
+
+.footer-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #556b2f;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Navigation Menu */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: linear-gradient(135deg, #556b2f, #6b8e23);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding-top: 100px;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 20px 30px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background: rgba(255,255,255,0.1);
+    padding-left: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 1.8rem;
+    }
+    
+    .users-grid,
+    .contact-circles {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .main-content {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 15px;
+    }
+    
+    .site-title {
+        font-size: 1.4rem;
+    }
+    
+    .avocado-logo {
+        width: 40px;
+        height: 60px;
+    }
+    
+    .users-grid,
+    .contact-circles {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .user-avatar,
+    .contact-circle {
+        width: 60px;
+        height: 60px;
+    }
+}
+
